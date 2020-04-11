@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 require 'pry'
 
+=======
+>>>>>>> 8f722f3bc931701bede678e841867bbe91220f53
 class TicTacToe
   
   WIN_COMBINATIONS = [
@@ -73,12 +76,22 @@ class TicTacToe
   end
   
   def won?
+<<<<<<< HEAD
     WIN_COMBINATIONS.any? do |array|
       if @board[array[0]] == @board[array[1]] && @board[array[1]] == @board[array[2]] && position_taken?(array[0])
         return array
       end
     end
   # binding.pry
+=======
+    winning_combination = nil
+    WIN_COMBINATIONS.each do |array|
+      if @board[array[0]] == @board[array[1]] && @board[array[1]] == @board[array[2]] && position_taken?(array[0])
+        winning_combination = array
+      end
+    end
+    winning_combination
+>>>>>>> 8f722f3bc931701bede678e841867bbe91220f53
   end
   
   def full?
@@ -94,7 +107,10 @@ class TicTacToe
   end
 
   def winner
+<<<<<<< HEAD
   #  binding.pry
+=======
+>>>>>>> 8f722f3bc931701bede678e841867bbe91220f53
     if self.won?
       @board[self.won?[0]]
     else
@@ -103,6 +119,7 @@ class TicTacToe
   end
   
   def play
+<<<<<<< HEAD
     until over?
       turn
     end
@@ -113,4 +130,14 @@ class TicTacToe
     end
   end
 
+=======
+    until over? == true
+      turn
+    end
+    if won? == true
+      puts winner
+    end
+  end
+  
+>>>>>>> 8f722f3bc931701bede678e841867bbe91220f53
 end
